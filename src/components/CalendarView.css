@@ -1,0 +1,167 @@
+/* src/components/CalendarView.css */
+
+/* Container to make the calendar responsive */
+.calendar-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* Prevent horizontal overflow */
+  }
+  
+  /* Highlight today's date with a distinct background color */
+  .today-highlight {
+    background-color: #e3f2fd !important; /* Light blue background */
+    border-radius: 4px;                   /* Slightly rounded corners */
+    position: relative;                   /* Positioning for layering */
+    z-index: 1;                           /* Ensure background is behind text */
+  }
+  
+  /* Ensure that the date numbers are readable above the background color */
+  .today-highlight .fc-daygrid-day-number {
+    position: relative;
+    z-index: 2; /* Bring the date number above the background */
+    color: #000000; /* Optional: Set a specific color for better contrast */
+  }
+  
+  /* Optional: Add a subtle transition for smooth highlighting effect */
+  .today-highlight {
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Change cursor to pointer to indicate interactivity */
+  .fc-daygrid-day {
+    cursor: pointer;
+  }
+  
+  /* Adjust header toolbar to prevent button overflow */
+  .fc-toolbar {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Ensure header buttons do not overflow */
+  .fc-toolbar-chunk {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 5px;
+  }
+  
+  /* Style navigation buttons */
+  .fc-button {
+    margin: 2px;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+  }
+  
+  /* Adjust title font size for better fit */
+  .fc-toolbar-title {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 600px) {
+    /* Reduce font size of header buttons */
+    .fc-button {
+      padding: 3px 6px;
+      font-size: 0.75rem;
+    }
+  
+    /* Allow toolbar chunks to stack vertically */
+    .fc-toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .fc-toolbar-chunk {
+      margin: 2px 0;
+    }
+  
+    /* Adjust title font size */
+    .fc-toolbar-title {
+      font-size: 0.9rem;
+    }
+  
+    /* Ensure calendar cells are properly sized */
+    .fc-daygrid-day {
+      padding: 5px;
+    }
+  }
+  /* src/components/CalendarView.css */
+
+/* Override styles for the calendar */
+
+.rbc-event {
+  border-radius: 5px;
+  opacity: 0.8;
+  color: white;
+  border: 0px;
+  display: block;
+}
+
+.rbc-event-label {
+  display: none;
+}
+
+.rbc-event-content {
+  font-size: 14px;
+}
+
+.rbc-day-slot .rbc-time-slot {
+  border-top: none;
+}
+
+.rbc-time-content > .rbc-time-gutter {
+  display: none;
+}
+
+.calendar-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.rbc-event {
+  border-radius: 5px;
+  opacity: 0.8;
+  color: white;
+  border: 0px;
+  display: block;
+}
+
+.rbc-event-label {
+  display: none;
+}
+
+.rbc-event-content {
+  font-size: 14px;
+}
+
+.rbc-day-slot .rbc-time-slot {
+  border-top: none;
+}
+
+.rbc-time-content > .rbc-time-gutter {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .rbc-toolbar button {
+    padding: 3px 6px;
+    font-size: 0.75rem;
+  }
+
+  .rbc-toolbar-label {
+    font-size: 0.9rem;
+  }
+
+  .rbc-day-slot .rbc-time-slot {
+    height: 20px;
+  }
+}
+
